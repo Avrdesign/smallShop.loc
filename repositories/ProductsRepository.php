@@ -2,7 +2,7 @@
 
 /**
  * Created by PhpStorm.
- * User: st
+ * User: Dmitri Avramets
  * Date: 03.08.2017
  * Time: 18:55
  */
@@ -27,7 +27,7 @@ class ProductsRepository
      return $products;
     }
 
-    public function getProductByProductId($productId){ //Возвращает объект по id - не работает
+    public function getProductByProductId($productId){ //Возвращает объект по id
         $array = DB::getDB()->getArrayFromTableWhere(self::TABLE_NAME,'id',$productId);
         $prod =  new Product;
         $prod->setProductId($array[0]["id"]);
