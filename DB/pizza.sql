@@ -2,10 +2,10 @@
 -- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
--- Хост: localhost:3306
--- Время создания: Авг 14 2017 г., 15:44
--- Версия сервера: 5.6.35
--- Версия PHP: 7.1.1
+-- Хост: 127.0.0.1:3306
+-- Время создания: Авг 31 2017 г., 22:08
+-- Версия сервера: 5.6.34
+-- Версия PHP: 5.6.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -40,7 +40,9 @@ CREATE TABLE `OrderItem` (
 INSERT INTO `OrderItem` (`id`, `count`, `orderId`, `pizzaId`) VALUES
 (7, 1, 2, 3),
 (8, 1, 2, 4),
-(9, 3, 2, 5);
+(9, 3, 2, 5),
+(10, 1, 3, 4),
+(11, 1, 3, 5);
 
 -- --------------------------------------------------------
 
@@ -63,7 +65,8 @@ CREATE TABLE `orderTable` (
 --
 
 INSERT INTO `orderTable` (`orderId`, `userName`, `userPhone`, `userAddress`, `dateCreate`, `status`, `totalPrice`) VALUES
-(2, 'Дмитрий', '+375295558386', 'Орловского', '2017-08-14 13:37:54', 1, 58);
+(2, 'Дмитрий', '+375295558386', 'Орловского', '2017-08-14 13:37:54', 1, 58),
+(3, 'Папа Карло', '+375294561234', 'Минск, Рокоссовского 140', '2017-08-31 18:11:35', 1, 24);
 
 -- --------------------------------------------------------
 
@@ -153,12 +156,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `OrderItem`
 --
 ALTER TABLE `OrderItem`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT для таблицы `orderTable`
 --
 ALTER TABLE `orderTable`
-  MODIFY `orderId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `orderId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT для таблицы `pizza`
 --
